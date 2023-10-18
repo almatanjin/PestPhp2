@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\SubjectController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,4 +23,12 @@ Route::get('/user', function (Request $request) {
 });
 
 Route::get('/products', [ProductController::class, 'index']);
-Route::post('/products', [ProductController::class, 'create']);
+Route::post('/products', [ProductController::class, 'store']);
+Route::get('/products/{id}', [ProductController::class, 'show']);
+Route::put('/products/{id}', [ProductController::class, 'update']);
+Route::get('/subjects', [SubjectController::class, 'index']);
+Route::post('/subjects', [SubjectController::class, 'store']);
+Route::get('/subjects/{id}', [SubjectController::class, 'show']);
+Route::put('/subjects/{id}', [SubjectController::class, 'update']);
+Route::delete('/subjects/{id}', [SubjectController::class,'destroy']);
+
