@@ -10,7 +10,4 @@ describe("it is a practice test for user", function () {
         $response = $this->get("api/user");
         $response->assertStatus(200);
     });
-    // it('user create', function() {
-    //     $user = User::factory()->create();
-    // });
 });
